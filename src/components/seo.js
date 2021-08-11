@@ -39,15 +39,15 @@ const Seo = ({ description, lang, meta, title }) => {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
-          name: `description`,
+          name: `this is a personal web`,
           content: metaDescription,
         },
         {
-          property: `og:title`,
+          property: `vicdoblepe's blog`,
           content: title,
         },
         {
-          property: `og:description`,
+          property: `this is a personal web`,
           content: metaDescription,
         },
         {
@@ -76,7 +76,7 @@ const Seo = ({ description, lang, meta, title }) => {
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  lang: `es`,
   meta: [],
   description: ``,
 }
