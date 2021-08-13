@@ -1,30 +1,29 @@
 import {createGlobalStyle} from 'styled-components'
-import NunitoRegular from '../fonts/NunitoRegular'
-import NunitoBlack from '../fonts/NunitoBlack'
-import { upperCase } from 'lodash'
-import { NonNullComposer } from 'graphql-compose'
+/* import NunitoRegular from '../fonts/'
+import NunitoBlack from './fonts/Nunito-Black' */
+
 
 export const colors = {
     white: "#fff",
-    darkGrey: '#1a1c20',
-    deepDarkGrey: '#404040',
-    bloueShade1: "#215873",
+    darkGrey: "#1a1c20",
+    deepDarkGrey: "#404040",
+    blueShade1: "#215873",
     blueShade2: "#215973",
     blueShade3: "#d1e1e9",
 }
-export const darkTheme = {
+export const lightTheme = {
     colors: {
-        backgound: colors.white,
-        menuBackgound: colors. bloueShade3,
-        textDark: colors.bloueShade1,
+        background: colors.white,
+        menuBackground: colors.blueShade3,
+        textDark: colors.blueShade1,
         textMain: colors.blueShade2,
         textSecondary: colors.deepDarkGrey
     }
 }
-export const lightTheme = {
+export const darkTheme = {
     colors: {
-        backgound: colors.darkGrey,
-        menuBackgound: colors. bloueShade1,
+        background: colors.darkGrey,
+        menuBackground: colors.blueShade1,
         textDark: colors.blueShade3,
         textMain: colors.blueShade2,
         textSecondary: colors.blueShade3
@@ -35,23 +34,17 @@ export const GlobalStyles = createGlobalStyle `
     --site-max-width: 1200px;
 }@font-face {
     font-family:"Nunito Regular";
-    src: 
-    local(Nunito Regular), local("Nunito Regular),
-    url(${NunitoRegular}) format('ttf');
     font-weight: 300;
     font-style: normal;
 }
 }@font-face {
     font-family:"Nunito Balck";
-    src: 
-    local(Nunito Black), local("Nunito Black),
-    url(${NunitoBlack}) format('ttf');
     font-weight: 300;
     font-style: normal;
 }
 body {
-    background: ${props => props.theme.colors.backgound};
-    color: ${propos => props.theme.colors.textSecondary};
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.textSecondary};
     font-family: "Nunito Regular", Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0 20px 80px 20px;
