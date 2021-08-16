@@ -2,14 +2,13 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles, darkTheme, lightTheme } from '../../styles/GlobalStyles'
 import { Header } from '../Header/Header'
-import Menu from '../Menu/Menu'
+
 
 export const Layout = ({  children, title }) => {
     return (
         <ThemeProvider theme={darkTheme}>
             <GlobalStyles />
             <Header />
-    
             <main>{children}</main>
             <footer>
             <button onClick={() => {
@@ -19,7 +18,6 @@ export const Layout = ({  children, title }) => {
 
                 © {new Date().getFullYear()}, Built with
                 {` `}
-                
             </footer>
         </ThemeProvider>
     )

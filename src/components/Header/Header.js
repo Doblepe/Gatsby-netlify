@@ -1,9 +1,12 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Menu from '../Menu/Menu'
-import { useStaticQuery, graphql } from "gatsby"
+import {useState} from 'react'
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
+import Hamburguer from '../Hamburguer'
+import Menu from '../Menu/Menu'
+import MobileMenu from '../Hamburguer/MobileMenu/Index'
+
 export const Wrapper = styled.div`
     display: flex;
     align-items: center;
@@ -11,7 +14,7 @@ export const Wrapper = styled.div`
     max-width:960px;
     height: 70px;
     margin: 20px auto;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 800px) {
         height: 120px
     }
 `
@@ -38,13 +41,17 @@ export const Header = () => {
       }
     }
   `)
-
     // Set these values by editing "siteMetadata" in gatsby-config.js
     const author = data.site.siteMetadata?.author
     const social = data.site.siteMetadata?.social
+    // STATE FOR HAMBURGUER
+    const [menuOpen, setMenuOpen] = useState(false)
+  
     return (
         <Wrapper>
-          <div>
+          <Hamburguer menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+          <MobileMenu menuOpen={menuOpen}/>
+         {/*  <div>
             <Link to="/">
                 <StaticImage
                     className="bio-avatar"
@@ -66,8 +73,8 @@ export const Header = () => {
                     </a>
                 </p>
             )}
-            </div>
-            <Menu />
+            </div> */}
+             <Menu />
           <div>Themebutton</div>
         </Wrapper>
     )

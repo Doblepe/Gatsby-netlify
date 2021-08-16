@@ -24,8 +24,6 @@ export const Nav = styled.ul `
         :hover {
             opacity:0.7;
         }
-
-
     }
 
     @media screen and (min-width:768px){
@@ -34,6 +32,7 @@ export const Nav = styled.ul `
 `
 const Menu = () => {
     return (
+        
         <Nav>
             <li>
             <Link to="/contact" activeClassName="active">Contacto </Link>
@@ -44,7 +43,6 @@ const Menu = () => {
             <li>
             <Link to="/admin/"activeClassName="active">Añadir post </Link>
             </li>
-            
         </Nav>
     )
 }
